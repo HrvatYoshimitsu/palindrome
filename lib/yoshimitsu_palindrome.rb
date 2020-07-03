@@ -1,12 +1,20 @@
 require "yoshimitsu_palindrome/version"
 
-class String
+module YoshimitsuPalindrome
   def palindrome?
     processed_content == processed_content.reverse
   end
   private
 
-    def processed_content
-      self.scan(/[a-z]/i).join.downcase
-    end
+  def processed_content
+    self.to_s.scan(/[a-z\d]/i).join.downcase
+  end
+end
+
+class String
+  include YoshimitsuPalindrome
+end
+
+class Integer
+  include YoshimitsuPalindrome
 end
