@@ -2,7 +2,7 @@ require "yoshimitsu_palindrome/version"
 
 module YoshimitsuPalindrome
   def palindrome?
-    processed_content == processed_content.reverse
+    !processed_content.strip.empty? && processed_content == processed_content.reverse
   end
   private
 

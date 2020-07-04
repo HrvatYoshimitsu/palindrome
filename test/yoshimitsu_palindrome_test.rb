@@ -24,4 +24,8 @@ class YoshimitsuPalindromeTest < Minitest::Test
   def test_integer
     assert 12321.palindrome?
   end
+
+  def test_empty_string
+    refute " \n \t \r ".palindrome?
+  end
 end
